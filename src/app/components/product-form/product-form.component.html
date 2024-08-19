@@ -1,0 +1,16 @@
+<div class="product-form-container">
+  <h1>{{ product.id ? 'Edit' : 'Add' }} Product</h1>
+  <form (ngSubmit)="saveProduct()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" [(ngModel)]="product.name" name="name" required>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="product.description" name="description" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" [(ngModel)]="product.quantity" name="quantity" required>
+
+    <button type="submit">Save</button>
+    <button type="button" (click)="router.navigate(['/products'])">Cancel</button>
+  </form>
+</div>
